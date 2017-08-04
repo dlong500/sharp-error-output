@@ -1,11 +1,11 @@
 # sharp-error-output
 ## Demonstrate problems with apparent error message leak
 
-### When I process a folder of images with sharp to create deep zoom image data (uncompressed) and the deep zoom output already exists, the error object sometimes contains messages from previous errors.  The behavior is not consistent--sometimes the errant data shows up in different places, but in my testing with the included dataset it almost always has at least one incorrect/leaked error message during the run.
+### When I process a folder of images with sharp to create deep zoom image data (uncompressed) and the deep zoom output already exists, the error object sometimes contains messages from previous (or other) errors.  The behavior is not consistent--sometimes the errant data shows up in different places, but in my testing with the included dataset it almost always has at least one incorrect/leaked error message during the run.
 
 ### Note that the image data included is public domain (obtained from http://www.metmuseum.org and http://gratisography.com).
 
-### Below is output from my machine for 8 successive runs of the app (after the initial run that populates the zoom data into the output folder).  As you can see, there are a lot of instances where the error object contains a message for a different operation.  Occasionally it even contains messages for 3+ operations.  You can easily see the lines that contain bad info because there should only be one line per error.
+### Below is output from my machine for 8 successive runs of the app (after the initial run that populates the zoom data into the output folder).  As you can see, there are a lot of instances where the error object contains a message for a different operation.  Occasionally a single error object contains messages for as many as 3 or more operations.  You can easily see the lines that contain bad info because there should only be one line per error (but below you can see many instances where there are multiple error messages printed together).
 
 ```
 dlong@baseship MINGW64 /c/local/code/sharp-error-output (master)
