@@ -8,6 +8,10 @@ function generateZoomFiles() {
   const iPath = path.resolve(__dirname, 'data', 'input');
   const oPath = path.resolve(__dirname, 'data', 'output');
 
+  if (!fs.existsSync(oPath)) {
+    fs.mkdirSync(oPath);
+  }
+
   let success = true;
   sharp.cache(false);
   //sharp.concurrency(1);
