@@ -57,3 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# Don't commit lock files for simple test app
+yarn.lock
+npm.lock
+
+# Generated output data
+data/output/
