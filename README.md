@@ -7,7 +7,11 @@
 
 ### Note that the hi-res image data included is public domain (obtained from http://www.metmuseum.org and http://gratisography.com) and is about 86MB in total.  I wanted to make sure there was a sufficiently large dataset to demonstrate the odd errors especially if there is some type of concurrency-related bug at play.
 
-### Below is output from my machine for 8 successive runs of the app (after the initial run that populates the zoom data into the output folder).  As you can see, there are a lot of instances where the error object contains a message for a different operation.  Occasionally a single error object contains messages for as many as 3 or more operations.  You can easily see the lines that contain bad info because there should only be one line per error (but below you can see many instances where there are multiple error messages printed together).
+### At the bottom of the README is output from my machine for 8 successive runs of the app (after the initial run that populates the zoom data into the output folder).  As you can see, there are a lot of instances where the error object contains a message for a different operation.  Occasionally a single error object contains messages for as many as 3 or more operations.  You can easily see the lines that contain bad info because there should only be one line per error (but below you can see many instances where there are multiple error messages printed together).
+
+### To reproduce/test, first clone repo, npm/yarn install, and run `npm start` or `yarn start`
+### The first run will generate the output folder with zoom data.
+### Every subsequent run will show the errors about the zoom data folders already existing, but _look for misplaced/leaked error messages._
 
 ```
 dlong@baseship MINGW64 /c/local/code/sharp-error-output (master)
